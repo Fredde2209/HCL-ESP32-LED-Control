@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>ESP32 Lampensteuerung</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="index.css">
+    </head>
+    <body>
+        <div class="header">
+            <h1><u>Beleuchtungssteuerung</u><h1>
+        </div>
+        <div class="main-content">
+            <p>
+                <button class="button" onmousedown="sendCode('on');" ontouchstart="sendCode('on');">ON/OFF</button>
+            </p>
+            <h5>Lichtmodi Auswahl:</h5>
+            <button class="button" onmousedown="sendCode('1');" ontouchstart="sendCode('1');">Mode 1</button>
+            <button class="button" onmousedown="sendCode('2');" ontouchstart="sendCode('2');">Mode 2</button>
+            <button class="button" onmousedown="sendCode('3');" ontouchstart="sendCode('3');">Mode 3</button>
+            <p>
+                <p><span id="textSliderValue">%SLIDERVALUE%</span>&#37</p>
+                <p><input type="range" onchange="updateSliderPWM(this)" id="pwmSlider" min="0" max="100" value="%SLIDERVALUE%" step="1" class="slider"></p>
+            </p>
+        </div>
+        <div class="footer">
+            <p>Frederiks Wandbeleuchtung 2022. Alle Rechte vorbehalten.</p>
+        </div>
+        <script>
+            var httpReq = new XMLHttpRequest();
+            function sendCode(code) 
+            {
+                httpReq.open("GET", "/" + code, true);
+                httpReq.send();
+            }
+            function updateSliderPWM(element) 
+            {
+                var pwmSliderValue = document.getElementById("pwmSlider").value;
+                document.getElementById("textSliderValue").innerHTML = pwmSliderValue;
+                httpReq.open("GET", "/slider?value="+pwmSliderValue, true);
+                httpReq.send();
+            }   
+        </script>
+    </body>
+</html>
