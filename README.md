@@ -16,11 +16,7 @@ import provided folders to your PlatformIO project
 enter WiFi data 
 
 import librarys (if not done already). You will need the following:
-#include <Arduino.h>
-#include <WiFi.h>
-#include <AsyncTCP.h>
-#include <ESPAsyncWebServer.h>
-#include <SPIFFS.h>
+Arduino.h, WiFi.h, AsyncTCP.h, ESPAsyncWebServer.h, SPIFFS.h
 
 upload file system image
 upload code
