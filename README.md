@@ -3,6 +3,7 @@
 - what does it do?
 
 Human Centric Lighting
+
 ESP32 with webserver 
 
 - how does it work? 
@@ -18,7 +19,6 @@ enter WiFi data
 import librarys (if not done already). You will need the following:
 Arduino.h, WiFi.h, AsyncTCP.h, ESPAsyncWebServer.h, SPIFFS.h
 
-upload file system image
-upload code
+upload file system image, then upload code
 
 DONE! 
