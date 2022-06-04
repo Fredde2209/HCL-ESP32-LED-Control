@@ -119,8 +119,8 @@ void setup()
     {
         // BUTTON 1 Gedrückt
         Serial.println("Button 1 gedrückt");
-        intensityWarmWhite = 255;
-        intensityColdWhite = 0;
+        intensityWarmWhite = 235;
+        intensityColdWhite = 20;
         setLEDs(intensityWarmWhite, intensityColdWhite);
         request->send(SPIFFS, "/index.html", String(), false, updateSlider);
     });
@@ -129,8 +129,8 @@ void setup()
     {
         // BUTTON 2 Gedrückt 
         Serial.println("Button 2 gedrückt");
-        intensityWarmWhite = 0;
-        intensityColdWhite = 255;
+        intensityWarmWhite = 141;
+        intensityColdWhite = 114;
         setLEDs(intensityWarmWhite, intensityColdWhite);
         request->send(SPIFFS, "/index.html", String(), false, updateSlider);
     });
@@ -139,8 +139,8 @@ void setup()
     {
         // BUTTON 3 Gedrückt 
         Serial.println("Button 3 gedrückt");
-        intensityWarmWhite = 128;
-        intensityColdWhite = 128;
+        intensityWarmWhite = 47;
+        intensityColdWhite = 208;
         setLEDs(intensityWarmWhite, intensityColdWhite);
         request->send(SPIFFS, "/index.html", String(), false, updateSlider);
     });
